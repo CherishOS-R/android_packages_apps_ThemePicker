@@ -55,8 +55,6 @@ import java.util.List;
 public class ShapeOptionsProvider extends ThemeComponentOptionProvider<ShapeOption> {
 
     private static final String TAG = "ShapeOptionsProvider";
-    private static final int MAX_ICON_SHAPE_PREVIEWS = 6;
-
     private final String[] mShapePreviewIconPackages;
     private int mThumbSize;
 
@@ -110,9 +108,6 @@ public class ShapeOptionsProvider extends ThemeComponentOptionProvider<ShapeOpti
         for (String packageName : mShapePreviewIconPackages) {
             Drawable icon = null;
             CharSequence name = null;
-			if (icons.size() == MAX_ICON_SHAPE_PREVIEWS) {
-                break;
-            }
             try {
                 Drawable appIcon = mContext.getPackageManager().getApplicationIcon(packageName);
                 if (appIcon instanceof AdaptiveIconDrawable) {
